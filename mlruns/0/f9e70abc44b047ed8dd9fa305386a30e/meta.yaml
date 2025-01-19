@@ -1,0 +1,15 @@
+artifact_uri: file:///home/jonnyoh/code/JonnyPOH/portfolio/AWS/kidney/mlruns/0/f9e70abc44b047ed8dd9fa305386a30e/artifacts
+end_time: 1737211821612
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f9e70abc44b047ed8dd9fa305386a30e
+run_name: hilarious-asp-306
+run_uuid: f9e70abc44b047ed8dd9fa305386a30e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737211816148
+status: 3
+tags: []
+user_id: jonnyoh
