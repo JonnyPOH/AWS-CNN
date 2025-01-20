@@ -1,6 +1,6 @@
-from cnnClassifier.config.configuration import ConfigurationManager
-from cnnClassifier.components.model_trainer import Training
-from cnnClassifier import logger
+from src.cnnClassifier.config.configuration import ConfigurationManager
+from src.cnnClassifier.components.model_trainer import Training
+from src.cnnClassifier import logger
 
 
 
@@ -17,7 +17,9 @@ class ModelTrainingPipeline:
         training_config = config.get_training_config()
         training = Training(config=training_config)
         training.get_base_model()
+        print("______________________base got____________________________")
         training.train_valid_generator()
+        print("______________________pre train____________________________")
         training.train()
 
 
@@ -32,4 +34,3 @@ if __name__ == '__main__':
     except Exception as e:
         logger.exception(e)
         raise e
-        

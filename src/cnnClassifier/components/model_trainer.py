@@ -12,11 +12,13 @@ class Training:
     def __init__(self, config: TrainingConfig):
         self.config = config
 
-    
+
     def get_base_model(self):
         self.model = tf.keras.models.load_model(
             self.config.updated_base_model_path
         )
+        print(f"Eager Execution Enabled After Loading Model: {tf.executing_eagerly()}")
+        self.model.summary()
 
     def train_valid_generator(self):
 
@@ -62,14 +64,12 @@ class Training:
             **dataflow_kwargs
         )
 
-    
+
     @staticmethod
     def save_model(path: Path, model: tf.keras.Model):
         model.save(path)
 
 
-
-    
     def train(self):
         self.steps_per_epoch = self.train_generator.samples // self.train_generator.batch_size
         self.validation_steps = self.valid_generator.samples // self.valid_generator.batch_size
@@ -86,4 +86,3 @@ class Training:
             path=self.config.trained_model_path,
             model=self.model
         )
-
